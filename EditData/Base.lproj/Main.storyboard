@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hqE-ZN-iyz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Iphone Models-->
+        <scene sceneID="3Pb-JC-ERp">
+            <objects>
+                <tableViewController id="TK3-zY-VnD" customClass="ModelsTableViewController" customModule="EditData" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5wQ-pR-1eL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="bTr-v8-BUv">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bTr-v8-BUv" id="LzX-EB-p8d">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="f4g-Ee-7Rh" kind="show" id="7KJ-Xi-Kff"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TK3-zY-VnD" id="RII-yF-Ne1"/>
+                            <outlet property="delegate" destination="TK3-zY-VnD" id="ENf-LT-be7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Iphone Models" id="Upd-Ub-GC7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Wp-CS-qOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111" y="102"/>
+        </scene>
+        <!--Edit Model-->
+        <scene sceneID="REG-ix-i60">
+            <objects>
+                <viewController id="f4g-Ee-7Rh" customClass="EditViewController" customModule="EditData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CjT-Z7-w7c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pB-rV-yPF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="333.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8pB-rV-yPF" firstAttribute="height" secondItem="CjT-Z7-w7c" secondAttribute="height" multiplier="0.5" id="7Nr-c1-MSw"/>
+                            <constraint firstItem="8pB-rV-yPF" firstAttribute="top" secondItem="4DT-QX-b2Z" secondAttribute="top" id="Z7X-Ox-q9G"/>
+                            <constraint firstItem="8pB-rV-yPF" firstAttribute="leading" secondItem="4DT-QX-b2Z" secondAttribute="leading" id="dlU-6S-T9F"/>
+                            <constraint firstItem="4DT-QX-b2Z" firstAttribute="trailing" secondItem="8pB-rV-yPF" secondAttribute="trailing" id="zR3-vR-qSP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4DT-QX-b2Z"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Model" id="lI5-mf-0BV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9KC-pw-Atz">
+                            <connections>
+                                <segue destination="wlt-CS-Mqo" kind="unwind" unwindAction="unwinModelWithSegue:" id="m2Q-SO-O1v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editTextField" destination="8pB-rV-yPF" id="SoL-eN-PgA"/>
+                        <outlet property="saveButton" destination="9KC-pw-Atz" id="164-af-Nkt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgt-Mw-tgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wlt-CS-Mqo" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="101"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Myp-n3-s8I">
+            <objects>
+                <navigationController id="hqE-ZN-iyz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kIl-kS-JAK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TK3-zY-VnD" kind="relationship" relationship="rootViewController" id="ySs-5D-iWx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ej-bg-LNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1063" y="102"/>
+        </scene>
+    </scenes>
+</document>
